@@ -1,0 +1,19 @@
+name: NXS-Sales
+version: '1.0'
+task_count: 50
+description: Sales development benchmark covering prospect research, qualification, outreach, follow-up, CRM hygiene, and
+  multi-prospect batch work for SDR-style agents.
+inspired_by: Original
+difficulty_distribution:
+  easy: 12
+  medium: 20
+  hard: 12
+  adversarial: 6
+persona_distribution:
+  frustrated_customer: 8
+  multi_language_customer: 7
+  impatient_customer: 7
+  technical_customer: 7
+  adversarial_user: 7
+  clear_customer: 7
+  vague_customer: 7

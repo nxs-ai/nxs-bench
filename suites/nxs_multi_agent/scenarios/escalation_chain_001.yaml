@@ -1,0 +1,67 @@
+id: multi-agent-escalation-chain-001
+domain: multi_agent
+role_template: coordinator
+category: escalation_chain
+difficulty: medium
+user_goal: Complete a multi-agent coordination task using the escalation_chain pattern.
+user_context: The request spans multiple specialist roles and the coordinator must preserve context, avoid duplicate work,
+  and aggregate the final answer.
+user_known_info:
+  coordination_id: coord-011
+user_hidden_info:
+  sensitive_note: Carry forward case nuance 11
+max_user_turns: 10
+available_tools:
+- consult
+- delegate
+- transfer
+- memory
+- crm
+- helpdesk
+knowledge_articles: []
+agent_constraints:
+  shared_memory_visible: false
+initial_state:
+  coordination_records:
+    coord-011:
+      id: coord-011
+      status: pending
+      context_preserved: false
+      duplicate_work: false
+      results_aggregated: false
+expected_state_changes:
+- entity_type: coordination_records
+  entity_id: coord-011
+  operation: field_equals
+  field: status
+  expected_value: completed
+- entity_type: coordination_records
+  entity_id: coord-011
+  operation: field_equals
+  field: results_aggregated
+  expected_value: true
+expected_tool_calls:
+- tool: coordination
+  operation: escalation_chain
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Drop context during a handoff
+- Duplicate the same subtask across agents
+required_behaviors:
+- Preserve context across handoffs
+- Aggregate all subtask results into one coherent answer
+expected_resolution: true
+personas:
+- clear_customer
+agent_roles:
+- account_manager
+- compliance_reviewer
+coordination_type: escalation_chain
+per_agent_expected_behaviors:
+  account_manager:
+  - account_manager handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary
+  compliance_reviewer:
+  - compliance_reviewer handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary

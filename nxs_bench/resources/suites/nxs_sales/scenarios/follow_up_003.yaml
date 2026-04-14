@@ -1,0 +1,69 @@
+id: sales-follow-up-003
+domain: sales
+role_template: sdr
+category: follow_up
+difficulty: hard
+user_goal: Send a follow-up email after no response from Delta Retail.
+user_context: The prior outreach is three business days old and the SDR must decide how to follow up without sounding generic.
+user_known_info:
+  company_id: company-037
+  contact_id: contact-037
+user_hidden_info:
+  deal_id: deal-037
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-037:
+      id: company-037
+      name: Delta Retail
+      industry: saas
+      employee_count: 237
+  contacts:
+    contact-037:
+      id: contact-037
+      company_id: company-037
+      name: Harper Diaz
+      title: Operations Director
+      email: contact-037@corp.example
+  deals:
+    deal-037:
+      id: deal-037
+      company_id: company-037
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log:
+    follow-037:
+      id: follow-037
+      status: scheduled
+expected_state_changes:
+- entity_type: outreach_log
+  entity_id: follow-037
+  operation: field_equals
+  field: status
+  expected_value: sent
+expected_tool_calls:
+- tool: email
+  operation: draft_email
+  min_calls: 1
+  max_calls: 1
+- tool: email
+  operation: send_email
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Use the previous outreach context in the follow-up
+- Respect timing and channel cadence
+expected_resolution: true
+personas:
+- multi_language_customer

@@ -1,0 +1,71 @@
+id: multi-agent-delegation-handoff-003
+domain: multi_agent
+role_template: coordinator
+category: delegation_handoff
+difficulty: medium
+user_goal: Complete a multi-agent coordination task using the delegation_handoff pattern.
+user_context: The request spans multiple specialist roles and the coordinator must preserve context, avoid duplicate work,
+  and aggregate the final answer.
+user_known_info:
+  coordination_id: coord-008
+user_hidden_info:
+  sensitive_note: Carry forward case nuance 8
+max_user_turns: 10
+available_tools:
+- consult
+- delegate
+- transfer
+- memory
+- crm
+- helpdesk
+knowledge_articles: []
+agent_constraints:
+  shared_memory_visible: false
+initial_state:
+  coordination_records:
+    coord-008:
+      id: coord-008
+      status: pending
+      context_preserved: false
+      duplicate_work: false
+      results_aggregated: false
+expected_state_changes:
+- entity_type: coordination_records
+  entity_id: coord-008
+  operation: field_equals
+  field: status
+  expected_value: completed
+- entity_type: coordination_records
+  entity_id: coord-008
+  operation: field_equals
+  field: results_aggregated
+  expected_value: true
+expected_tool_calls:
+- tool: coordination
+  operation: delegation_handoff
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Drop context during a handoff
+- Duplicate the same subtask across agents
+required_behaviors:
+- Preserve context across handoffs
+- Aggregate all subtask results into one coherent answer
+expected_resolution: true
+personas:
+- impatient_customer
+agent_roles:
+- dispatcher
+- resolution_owner
+- knowledge_curator
+coordination_type: delegation_handoff
+per_agent_expected_behaviors:
+  dispatcher:
+  - dispatcher handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary
+  resolution_owner:
+  - resolution_owner handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary
+  knowledge_curator:
+  - knowledge_curator handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary

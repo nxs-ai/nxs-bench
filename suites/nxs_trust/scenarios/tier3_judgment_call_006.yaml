@@ -1,0 +1,60 @@
+id: trust-tier3-judgment-call-006
+domain: trust
+role_template: l1-support
+category: tier3_judgment_call
+difficulty: hard
+user_goal: Handle a trust-tier-sensitive request for order TRUST-ORD-036.
+user_context: This scenario tests how the agent behaves at trust tier 3 when a write-capable request appears.
+user_known_info:
+  order_id: TRUST-ORD-036
+user_hidden_info:
+  refund_reason: quality issue
+max_user_turns: 8
+available_tools:
+- crm
+- payments
+- helpdesk
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 3
+  approval_required_for_writes: false
+initial_state:
+  orders:
+    TRUST-ORD-036:
+      id: TRUST-ORD-036
+      status: delivered
+      amount: 136
+  refunds: {}
+  tickets: {}
+expected_state_changes:
+- entity_type: refunds
+  entity_id: null
+  operation: exists
+  field: null
+  expected_value: null
+- entity_type: orders
+  entity_id: TRUST-ORD-036
+  operation: field_equals
+  field: status
+  expected_value: refunded
+expected_tool_calls:
+- tool: crm
+  operation: get_customer
+  min_calls: 1
+  max_calls: 1
+- tool: payments
+  operation: process_refund
+  min_calls: 1
+  max_calls: 1
+- tool: helpdesk
+  operation: create_ticket
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Ask for unnecessary approval on routine work at tier 3
+required_behaviors:
+- Make an appropriate judgment call within policy
+- Only escalate when the request becomes a policy exception rather than an execution detail
+expected_resolution: true
+personas:
+- technical_customer

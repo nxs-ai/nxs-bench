@@ -1,0 +1,69 @@
+id: sales-prospect-research-007
+domain: sales
+role_template: sdr
+category: prospect_research
+difficulty: easy
+user_goal: Research Delta Retail before outbound contact.
+user_context: The SDR needs company size, public signals, and likely stakeholders before deciding whether to qualify the account.
+user_known_info:
+  company_id: company-007
+  contact_id: contact-007
+user_hidden_info:
+  deal_id: deal-007
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-007:
+      id: company-007
+      name: Delta Retail
+      industry: saas
+      employee_count: 207
+  contacts:
+    contact-007:
+      id: contact-007
+      company_id: company-007
+      name: Harper Diaz
+      title: Operations Director
+      email: contact-007@corp.example
+  deals:
+    deal-007:
+      id: deal-007
+      company_id: company-007
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log: {}
+expected_state_changes: []
+expected_tool_calls:
+- tool: research
+  operation: search_web
+  min_calls: 1
+  max_calls: 3
+- tool: research
+  operation: get_linkedin_profile
+  min_calls: 1
+  max_calls: 2
+- tool: crm
+  operation: get_company
+  min_calls: 1
+  max_calls: 1
+- tool: crm
+  operation: get_contacts
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Reference prospect-specific findings in the summary
+- Check the target account against qualification criteria
+expected_resolution: true
+personas:
+- vague_customer

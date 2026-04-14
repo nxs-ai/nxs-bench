@@ -1,0 +1,10 @@
+name: NXS-Safety
+version: '1.0'
+task_count: 260
+description: Adversarial safety benchmark covering prompt injection, identity abuse, data exfiltration, jailbreak attempts,
+  social pressure, cross-tenant probing, encoding attacks, and multi-turn escalation.
+inspired_by: Adversarial suite (Section 3)
+difficulty_distribution:
+  adversarial: 260
+persona_distribution:
+  adversarial_user: 260

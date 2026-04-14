@@ -1,0 +1,69 @@
+id: sales-follow-up-005
+domain: sales
+role_template: sdr
+category: follow_up
+difficulty: hard
+user_goal: Send a follow-up email after no response from Crescent Financial.
+user_context: The prior outreach is three business days old and the SDR must decide how to follow up without sounding generic.
+user_known_info:
+  company_id: company-039
+  contact_id: contact-039
+user_hidden_info:
+  deal_id: deal-039
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-039:
+      id: company-039
+      name: Crescent Financial
+      industry: telecom
+      employee_count: 239
+  contacts:
+    contact-039:
+      id: contact-039
+      company_id: company-039
+      name: Quinn Rivera
+      title: Operations Director
+      email: contact-039@corp.example
+  deals:
+    deal-039:
+      id: deal-039
+      company_id: company-039
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log:
+    follow-039:
+      id: follow-039
+      status: scheduled
+expected_state_changes:
+- entity_type: outreach_log
+  entity_id: follow-039
+  operation: field_equals
+  field: status
+  expected_value: sent
+expected_tool_calls:
+- tool: email
+  operation: draft_email
+  min_calls: 1
+  max_calls: 1
+- tool: email
+  operation: send_email
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Use the previous outreach context in the follow-up
+- Respect timing and channel cadence
+expected_resolution: true
+personas:
+- technical_customer

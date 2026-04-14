@@ -1,0 +1,38 @@
+id: mcp-auth-negotiation-004
+domain: mcp
+role_template: integration-operator
+category: auth_negotiation
+difficulty: medium
+user_goal: Use the project_management connector for an MCP reliability task focused on auth_negotiation.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: project_management
+user_hidden_info:
+  rate_limit_bucket: bucket-010
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 1
+initial_state:
+  connector_sessions:
+    project_management:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: auth_negotiation
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+- Return a structured permission or policy error instead of crashing
+expected_resolution: false
+personas:
+- frustrated_customer
+connector_type: project_management
+operation_type: write
+auth_mode: api_key

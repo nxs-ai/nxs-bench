@@ -1,0 +1,333 @@
+id: knowledge-multi-hop-001
+domain: knowledge
+role_template: knowledge-analyst
+category: multi_hop
+difficulty: medium
+user_goal: Combine two policy details into one answer for case 13.
+user_context: The answer requires synthesizing timing and approval requirements from more than one article.
+user_known_info:
+  question_id: Q-013
+user_hidden_info:
+  research_case: 13
+max_user_turns: 8
+available_tools:
+- knowledge
+knowledge_articles:
+- id: KNOW-013-A01
+  title: KNOW-013 article 1
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 1 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 1 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 1 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 1
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A02
+  title: KNOW-013 article 2
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 2 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 2 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 2 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 2
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A03
+  title: KNOW-013 article 3
+  content: 'Primary policy note guidance note 1: The documented response window for case 13 is 13 business hours. The operating
+    note also clarifies audit retention and evidence packaging, approval paths, evidence requirements, and exception handling
+    for frontline teams. Primary policy note guidance note 2: The documented response window for case 13 is 13 business hours.
+    The operating note also clarifies audit retention and evidence packaging, approval paths, evidence requirements, and exception
+    handling for frontline teams. Primary policy note guidance note 3: The documented response window for case 13 is 13 business
+    hours. The operating note also clarifies audit retention and evidence packaging, approval paths, evidence requirements,
+    and exception handling for frontline teams. Primary policy note guidance note 4: The documented response window for case
+    13 is 13 business hours. The operating note also clarifies audit retention and evidence packaging, approval paths, evidence
+    requirements, and exception handling for frontline teams. Primary policy note guidance note 5: The documented response
+    window for case 13 is 13 business hours. The operating note also clarifies audit retention and evidence packaging, approval
+    paths, evidence requirements, and exception handling for frontline teams. Primary policy note guidance note 6: The documented
+    response window for case 13 is 13 business hours. The operating note also clarifies audit retention and evidence packaging,
+    approval paths, evidence requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A04
+  title: KNOW-013 article 4
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 4 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 4 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 4 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 4
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A05
+  title: KNOW-013 article 5
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 5 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 5 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 5 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 5
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A06
+  title: KNOW-013 article 6
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 6 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 6 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 6 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 6
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A07
+  title: KNOW-013 article 7
+  content: 'Secondary policy note guidance note 1: Escalation requires approval tier 2 and customer notification within 3
+    hours. The operating note also clarifies regional exceptions and signoff windows, approval paths, evidence requirements,
+    and exception handling for frontline teams. Secondary policy note guidance note 2: Escalation requires approval tier 2
+    and customer notification within 3 hours. The operating note also clarifies regional exceptions and signoff windows, approval
+    paths, evidence requirements, and exception handling for frontline teams. Secondary policy note guidance note 3: Escalation
+    requires approval tier 2 and customer notification within 3 hours. The operating note also clarifies regional exceptions
+    and signoff windows, approval paths, evidence requirements, and exception handling for frontline teams. Secondary policy
+    note guidance note 4: Escalation requires approval tier 2 and customer notification within 3 hours. The operating note
+    also clarifies regional exceptions and signoff windows, approval paths, evidence requirements, and exception handling
+    for frontline teams. Secondary policy note guidance note 5: Escalation requires approval tier 2 and customer notification
+    within 3 hours. The operating note also clarifies regional exceptions and signoff windows, approval paths, evidence requirements,
+    and exception handling for frontline teams. Secondary policy note guidance note 6: Escalation requires approval tier 2
+    and customer notification within 3 hours. The operating note also clarifies regional exceptions and signoff windows, approval
+    paths, evidence requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A08
+  title: KNOW-013 article 8
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 8 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 8 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 8 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 8
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A09
+  title: KNOW-013 article 9
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 9 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 9 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 9 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 9
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A10
+  title: KNOW-013 article 10
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 10 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 10 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 10 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 10
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A11
+  title: KNOW-013 article 11
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 11 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 11 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 11 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 11
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+- id: KNOW-013-A12
+  title: KNOW-013 article 12
+  content: 'Distractor article guidance note 1: This article covers unrelated topic 12 for KNOW-013. The operating note also
+    clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception handling
+    for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 12 for KNOW-013. The operating
+    note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+    handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic 12 for KNOW-013.
+    The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+    and exception handling for frontline teams. Distractor article guidance note 4: This article covers unrelated topic 12
+    for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence
+    requirements, and exception handling for frontline teams.'
+agent_constraints:
+  citation_required: true
+initial_state:
+  knowledge_articles:
+    KNOW-013-A01:
+      id: KNOW-013-A01
+      title: KNOW-013 article 1
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 1 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 1 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        1 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 1 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A02:
+      id: KNOW-013-A02
+      title: KNOW-013 article 2
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 2 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 2 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        2 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 2 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A03:
+      id: KNOW-013-A03
+      title: KNOW-013 article 3
+      content: 'Primary policy note guidance note 1: The documented response window for case 13 is 13 business hours. The
+        operating note also clarifies audit retention and evidence packaging, approval paths, evidence requirements, and exception
+        handling for frontline teams. Primary policy note guidance note 2: The documented response window for case 13 is 13
+        business hours. The operating note also clarifies audit retention and evidence packaging, approval paths, evidence
+        requirements, and exception handling for frontline teams. Primary policy note guidance note 3: The documented response
+        window for case 13 is 13 business hours. The operating note also clarifies audit retention and evidence packaging,
+        approval paths, evidence requirements, and exception handling for frontline teams. Primary policy note guidance note
+        4: The documented response window for case 13 is 13 business hours. The operating note also clarifies audit retention
+        and evidence packaging, approval paths, evidence requirements, and exception handling for frontline teams. Primary
+        policy note guidance note 5: The documented response window for case 13 is 13 business hours. The operating note also
+        clarifies audit retention and evidence packaging, approval paths, evidence requirements, and exception handling for
+        frontline teams. Primary policy note guidance note 6: The documented response window for case 13 is 13 business hours.
+        The operating note also clarifies audit retention and evidence packaging, approval paths, evidence requirements, and
+        exception handling for frontline teams.'
+    KNOW-013-A04:
+      id: KNOW-013-A04
+      title: KNOW-013 article 4
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 4 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 4 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        4 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 4 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A05:
+      id: KNOW-013-A05
+      title: KNOW-013 article 5
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 5 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 5 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        5 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 5 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A06:
+      id: KNOW-013-A06
+      title: KNOW-013 article 6
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 6 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 6 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        6 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 6 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A07:
+      id: KNOW-013-A07
+      title: KNOW-013 article 7
+      content: 'Secondary policy note guidance note 1: Escalation requires approval tier 2 and customer notification within
+        3 hours. The operating note also clarifies regional exceptions and signoff windows, approval paths, evidence requirements,
+        and exception handling for frontline teams. Secondary policy note guidance note 2: Escalation requires approval tier
+        2 and customer notification within 3 hours. The operating note also clarifies regional exceptions and signoff windows,
+        approval paths, evidence requirements, and exception handling for frontline teams. Secondary policy note guidance
+        note 3: Escalation requires approval tier 2 and customer notification within 3 hours. The operating note also clarifies
+        regional exceptions and signoff windows, approval paths, evidence requirements, and exception handling for frontline
+        teams. Secondary policy note guidance note 4: Escalation requires approval tier 2 and customer notification within
+        3 hours. The operating note also clarifies regional exceptions and signoff windows, approval paths, evidence requirements,
+        and exception handling for frontline teams. Secondary policy note guidance note 5: Escalation requires approval tier
+        2 and customer notification within 3 hours. The operating note also clarifies regional exceptions and signoff windows,
+        approval paths, evidence requirements, and exception handling for frontline teams. Secondary policy note guidance
+        note 6: Escalation requires approval tier 2 and customer notification within 3 hours. The operating note also clarifies
+        regional exceptions and signoff windows, approval paths, evidence requirements, and exception handling for frontline
+        teams.'
+    KNOW-013-A08:
+      id: KNOW-013-A08
+      title: KNOW-013 article 8
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 8 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 8 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        8 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 8 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A09:
+      id: KNOW-013-A09
+      title: KNOW-013 article 9
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 9 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 9 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        9 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 9 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A10:
+      id: KNOW-013-A10
+      title: KNOW-013 article 10
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 10 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 10 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        10 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 10 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A11:
+      id: KNOW-013-A11
+      title: KNOW-013 article 11
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 11 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 11 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        11 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 11 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+    KNOW-013-A12:
+      id: KNOW-013-A12
+      title: KNOW-013 article 12
+      content: 'Distractor article guidance note 1: This article covers unrelated topic 12 for KNOW-013. The operating note
+        also clarifies secondary procedures outside the requested question, approval paths, evidence requirements, and exception
+        handling for frontline teams. Distractor article guidance note 2: This article covers unrelated topic 12 for KNOW-013.
+        The operating note also clarifies secondary procedures outside the requested question, approval paths, evidence requirements,
+        and exception handling for frontline teams. Distractor article guidance note 3: This article covers unrelated topic
+        12 for KNOW-013. The operating note also clarifies secondary procedures outside the requested question, approval paths,
+        evidence requirements, and exception handling for frontline teams. Distractor article guidance note 4: This article
+        covers unrelated topic 12 for KNOW-013. The operating note also clarifies secondary procedures outside the requested
+        question, approval paths, evidence requirements, and exception handling for frontline teams.'
+expected_state_changes: []
+expected_tool_calls:
+- tool: knowledge
+  operation: search
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Answer without citing article ids
+- Invent information not supported by the articles
+required_behaviors:
+- Cite articles KNOW-013-A03 and KNOW-013-A07 when answering
+- Combine multiple sources instead of relying on one note
+expected_resolution: true
+personas:
+- vague_customer
+citation_ids:
+- KNOW-013-A03
+- KNOW-013-A07

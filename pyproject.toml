@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nxs-bench"
+version = "0.1.0"
+description = "Open benchmark suites, runner, and mock infrastructure for agent platforms."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "nxs-ai" }]
+dependencies = [
+  "click>=8.1",
+  "httpx>=0.27",
+  "pydantic>=2.6",
+  "PyYAML>=6.0",
+]
+keywords = ["agents", "benchmark", "evaluation", "llm", "tool-use"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+nxs-bench = "nxs_bench.runner:cli"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nxs_bench*"]
+
+[tool.setuptools.package-data]
+nxs_bench = ["resources/**/*.yaml", "resources/**/*.json"]

@@ -1,0 +1,38 @@
+id: mcp-error-handling-002
+domain: mcp
+role_template: integration-operator
+category: error_handling
+difficulty: medium
+user_goal: Use the email connector for an MCP reliability task focused on error_handling.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: email
+user_hidden_info:
+  rate_limit_bucket: bucket-014
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 1
+initial_state:
+  connector_sessions:
+    email:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: error_handling
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+- Return a structured permission or policy error instead of crashing
+expected_resolution: false
+personas:
+- adversarial_user
+connector_type: email
+operation_type: write
+auth_mode: api_key

@@ -1,0 +1,19 @@
+name: NXS-Knowledge
+version: '1.0'
+task_count: 50
+description: Knowledge reasoning benchmark that forces retrieval, citation, contradiction handling, and refusal when the knowledge
+  base does not support the requested answer.
+inspired_by: Sierra tau-Knowledge (banking)
+difficulty_distribution:
+  easy: 8
+  medium: 22
+  hard: 14
+  adversarial: 6
+persona_distribution:
+  multi_language_customer: 8
+  impatient_customer: 7
+  technical_customer: 7
+  adversarial_user: 7
+  clear_customer: 7
+  vague_customer: 7
+  frustrated_customer: 7

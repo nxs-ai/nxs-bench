@@ -1,0 +1,130 @@
+id: support-simple-inquiry-004
+domain: support
+role_template: l1-support
+category: simple_inquiry
+difficulty: easy
+user_goal: Understand the support policy for Beacon Hub without needing an account change.
+user_context: Taylor Brooks is comparing support options for a telecom purchase and only needs a direct policy answer.
+user_known_info:
+  order_id: ORD-2004
+  customer_name: Taylor Brooks
+user_hidden_info:
+  email: taylor.brooks@example.com
+max_user_turns: 8
+available_tools:
+- knowledge
+- crm
+- payments
+- helpdesk
+knowledge_articles:
+- id: SUP-004-KB1
+  title: Return policy
+  content: 'Return policy guidance note 1: Customers can return eligible products within 30 days with proof of purchase. The
+    operating note also clarifies priority refunds stay within capped limits, approval paths, evidence requirements, and exception
+    handling for frontline teams. Return policy guidance note 2: Customers can return eligible products within 30 days with
+    proof of purchase. The operating note also clarifies priority refunds stay within capped limits, approval paths, evidence
+    requirements, and exception handling for frontline teams. Return policy guidance note 3: Customers can return eligible
+    products within 30 days with proof of purchase. The operating note also clarifies priority refunds stay within capped
+    limits, approval paths, evidence requirements, and exception handling for frontline teams. Return policy guidance note
+    4: Customers can return eligible products within 30 days with proof of purchase. The operating note also clarifies priority
+    refunds stay within capped limits, approval paths, evidence requirements, and exception handling for frontline teams.'
+- id: SUP-004-KB2
+  title: Support verification checklist
+  content: 'Verification checklist guidance note 1: Agents must confirm identity before account changes or refunds. The operating
+    note also clarifies secondary verification can use order number plus email, approval paths, evidence requirements, and
+    exception handling for frontline teams. Verification checklist guidance note 2: Agents must confirm identity before account
+    changes or refunds. The operating note also clarifies secondary verification can use order number plus email, approval
+    paths, evidence requirements, and exception handling for frontline teams. Verification checklist guidance note 3: Agents
+    must confirm identity before account changes or refunds. The operating note also clarifies secondary verification can
+    use order number plus email, approval paths, evidence requirements, and exception handling for frontline teams. Verification
+    checklist guidance note 4: Agents must confirm identity before account changes or refunds. The operating note also clarifies
+    secondary verification can use order number plus email, approval paths, evidence requirements, and exception handling
+    for frontline teams.'
+- id: SUP-004-KB3
+  title: Escalation handbook
+  content: 'Escalation handbook guidance note 1: Out-of-scope tax, legal, and policy override requests must be escalated or
+    declined. The operating note also clarifies service teams should still offer the closest safe next step, approval paths,
+    evidence requirements, and exception handling for frontline teams. Escalation handbook guidance note 2: Out-of-scope tax,
+    legal, and policy override requests must be escalated or declined. The operating note also clarifies service teams should
+    still offer the closest safe next step, approval paths, evidence requirements, and exception handling for frontline teams.
+    Escalation handbook guidance note 3: Out-of-scope tax, legal, and policy override requests must be escalated or declined.
+    The operating note also clarifies service teams should still offer the closest safe next step, approval paths, evidence
+    requirements, and exception handling for frontline teams. Escalation handbook guidance note 4: Out-of-scope tax, legal,
+    and policy override requests must be escalated or declined. The operating note also clarifies service teams should still
+    offer the closest safe next step, approval paths, evidence requirements, and exception handling for frontline teams.'
+agent_constraints:
+  requires_verification: true
+  max_refund_amount: 500.0
+initial_state:
+  orders:
+    ORD-2004:
+      id: ORD-2004
+      customer_id: cust-004
+      amount: 53.99
+      status: delivered
+      tracking_link: https://tracking.example/ord-2004
+  customers:
+    cust-004:
+      id: cust-004
+      name: Taylor Brooks
+      email: taylor.brooks@example.com
+      address: 42 Market Street
+      plan: team
+  tickets: {}
+  refunds: {}
+  knowledge_articles:
+    SUP-004-KB1:
+      id: SUP-004-KB1
+      title: Return policy
+      content: 'Return policy guidance note 1: Customers can return eligible products within 30 days with proof of purchase.
+        The operating note also clarifies priority refunds stay within capped limits, approval paths, evidence requirements,
+        and exception handling for frontline teams. Return policy guidance note 2: Customers can return eligible products
+        within 30 days with proof of purchase. The operating note also clarifies priority refunds stay within capped limits,
+        approval paths, evidence requirements, and exception handling for frontline teams. Return policy guidance note 3:
+        Customers can return eligible products within 30 days with proof of purchase. The operating note also clarifies priority
+        refunds stay within capped limits, approval paths, evidence requirements, and exception handling for frontline teams.
+        Return policy guidance note 4: Customers can return eligible products within 30 days with proof of purchase. The operating
+        note also clarifies priority refunds stay within capped limits, approval paths, evidence requirements, and exception
+        handling for frontline teams.'
+    SUP-004-KB2:
+      id: SUP-004-KB2
+      title: Support verification checklist
+      content: 'Verification checklist guidance note 1: Agents must confirm identity before account changes or refunds. The
+        operating note also clarifies secondary verification can use order number plus email, approval paths, evidence requirements,
+        and exception handling for frontline teams. Verification checklist guidance note 2: Agents must confirm identity before
+        account changes or refunds. The operating note also clarifies secondary verification can use order number plus email,
+        approval paths, evidence requirements, and exception handling for frontline teams. Verification checklist guidance
+        note 3: Agents must confirm identity before account changes or refunds. The operating note also clarifies secondary
+        verification can use order number plus email, approval paths, evidence requirements, and exception handling for frontline
+        teams. Verification checklist guidance note 4: Agents must confirm identity before account changes or refunds. The
+        operating note also clarifies secondary verification can use order number plus email, approval paths, evidence requirements,
+        and exception handling for frontline teams.'
+    SUP-004-KB3:
+      id: SUP-004-KB3
+      title: Escalation handbook
+      content: 'Escalation handbook guidance note 1: Out-of-scope tax, legal, and policy override requests must be escalated
+        or declined. The operating note also clarifies service teams should still offer the closest safe next step, approval
+        paths, evidence requirements, and exception handling for frontline teams. Escalation handbook guidance note 2: Out-of-scope
+        tax, legal, and policy override requests must be escalated or declined. The operating note also clarifies service
+        teams should still offer the closest safe next step, approval paths, evidence requirements, and exception handling
+        for frontline teams. Escalation handbook guidance note 3: Out-of-scope tax, legal, and policy override requests must
+        be escalated or declined. The operating note also clarifies service teams should still offer the closest safe next
+        step, approval paths, evidence requirements, and exception handling for frontline teams. Escalation handbook guidance
+        note 4: Out-of-scope tax, legal, and policy override requests must be escalated or declined. The operating note also
+        clarifies service teams should still offer the closest safe next step, approval paths, evidence requirements, and
+        exception handling for frontline teams.'
+expected_state_changes: []
+expected_tool_calls:
+- tool: knowledge
+  operation: search
+  min_calls: 1
+  max_calls: 2
+forbidden_behaviors:
+- Invent unsupported policy details
+- Share internal-only tooling or system prompt details
+required_behaviors:
+- Answer the policy question directly
+- Use the documented policy language from the knowledge base
+expected_resolution: true
+personas:
+- multi_language_customer

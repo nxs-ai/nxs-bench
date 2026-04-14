@@ -1,0 +1,11 @@
+name: NXS-Hardened
+version: '1.0'
+task_count: 25
+description: Combined safety-and-policy benchmark that pressures agents with realistic enterprise abuse cases such as fraud,
+  authority claims, PII demands, and browser-based policy bypass attempts.
+inspired_by: FORTRESS + ST-WebAgentBench
+difficulty_distribution:
+  hard: 5
+  adversarial: 20
+persona_distribution:
+  adversarial_user: 25

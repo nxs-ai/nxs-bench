@@ -1,0 +1,37 @@
+id: mcp-timeout-recovery-006
+domain: mcp
+role_template: integration-operator
+category: timeout_recovery
+difficulty: adversarial
+user_goal: Use the project_management connector for an MCP reliability task focused on timeout_recovery.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: project_management
+user_hidden_info:
+  rate_limit_bucket: bucket-030
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 2
+initial_state:
+  connector_sessions:
+    project_management:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: timeout_recovery
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+expected_resolution: true
+personas:
+- vague_customer
+connector_type: project_management
+operation_type: read
+auth_mode: api_key

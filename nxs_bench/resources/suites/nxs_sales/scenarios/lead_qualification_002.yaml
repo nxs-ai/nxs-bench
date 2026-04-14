@@ -1,0 +1,70 @@
+id: sales-lead-qualification-002
+domain: sales
+role_template: sdr
+category: lead_qualification
+difficulty: medium
+user_goal: Determine whether Harbor Logistics should be marked qualified in CRM.
+user_context: The SDR must compare the account against ICP size, industry, budget, and timing criteria.
+user_known_info:
+  company_id: company-016
+  contact_id: contact-016
+user_hidden_info:
+  deal_id: deal-016
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-016:
+      id: company-016
+      name: Harbor Logistics
+      industry: ecommerce
+      employee_count: 216
+  contacts:
+    contact-016:
+      id: contact-016
+      company_id: company-016
+      name: Morgan Patel
+      title: Operations Director
+      email: contact-016@corp.example
+  deals:
+    deal-016:
+      id: deal-016
+      company_id: company-016
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log: {}
+expected_state_changes:
+- entity_type: deals
+  entity_id: deal-016
+  operation: field_equals
+  field: qualified
+  expected_value: true
+expected_tool_calls:
+- tool: crm
+  operation: get_company
+  min_calls: 1
+  max_calls: 1
+- tool: crm
+  operation: get_contacts
+  min_calls: 1
+  max_calls: 1
+- tool: crm
+  operation: update_deal
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Check qualification criteria explicitly
+- Update CRM with the qualification outcome and reasoning
+expected_resolution: true
+personas:
+- multi_language_customer

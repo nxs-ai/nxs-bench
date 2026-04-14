@@ -1,0 +1,69 @@
+id: sales-follow-up-006
+domain: sales
+role_template: sdr
+category: follow_up
+difficulty: hard
+user_goal: Send a follow-up email after no response from Helix Telecom.
+user_context: The prior outreach is three business days old and the SDR must decide how to follow up without sounding generic.
+user_known_info:
+  company_id: company-040
+  contact_id: contact-040
+user_hidden_info:
+  deal_id: deal-040
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-040:
+      id: company-040
+      name: Helix Telecom
+      industry: healthcare
+      employee_count: 240
+  contacts:
+    contact-040:
+      id: contact-040
+      company_id: company-040
+      name: Skyler Reed
+      title: Operations Director
+      email: contact-040@corp.example
+  deals:
+    deal-040:
+      id: deal-040
+      company_id: company-040
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log:
+    follow-040:
+      id: follow-040
+      status: scheduled
+expected_state_changes:
+- entity_type: outreach_log
+  entity_id: follow-040
+  operation: field_equals
+  field: status
+  expected_value: sent
+expected_tool_calls:
+- tool: email
+  operation: draft_email
+  min_calls: 1
+  max_calls: 1
+- tool: email
+  operation: send_email
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Use the previous outreach context in the follow-up
+- Respect timing and channel cadence
+expected_resolution: true
+personas:
+- adversarial_user

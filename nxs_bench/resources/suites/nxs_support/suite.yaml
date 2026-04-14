@@ -1,0 +1,19 @@
+name: NXS-Support
+version: '1.0'
+task_count: 100
+description: Customer support benchmark covering policy questions, order lookups, refunds, troubleshooting, account changes,
+  and escalation-safe handling across ecommerce, SaaS, and service workflows.
+inspired_by: Sierra tau-bench retail/airline/telecom
+difficulty_distribution:
+  easy: 30
+  medium: 40
+  hard: 20
+  adversarial: 10
+persona_distribution:
+  clear_customer: 15
+  vague_customer: 15
+  frustrated_customer: 14
+  multi_language_customer: 14
+  impatient_customer: 14
+  technical_customer: 14
+  adversarial_user: 14

@@ -1,0 +1,70 @@
+id: sales-outreach-drafting-004
+domain: sales
+role_template: sdr
+category: outreach_drafting
+difficulty: medium
+user_goal: Draft a personalized outbound email for Pioneer Security.
+user_context: The SDR already has baseline research and needs an outreach draft tied to the prospect context.
+user_known_info:
+  company_id: company-028
+  contact_id: contact-028
+user_hidden_info:
+  deal_id: deal-028
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-028:
+      id: company-028
+      name: Pioneer Security
+      industry: professional services
+      employee_count: 228
+  contacts:
+    contact-028:
+      id: contact-028
+      company_id: company-028
+      name: Parker Shah
+      title: Operations Director
+      email: contact-028@corp.example
+  deals:
+    deal-028:
+      id: deal-028
+      company_id: company-028
+      stage: discovery
+      qualified: false
+  email_drafts:
+    draft-028:
+      id: draft-028
+      deal_id: deal-028
+      status: pending
+  outreach_log: {}
+expected_state_changes:
+- entity_type: email_drafts
+  entity_id: draft-028
+  operation: field_equals
+  field: status
+  expected_value: ready
+expected_tool_calls:
+- tool: research
+  operation: search_web
+  min_calls: 1
+  max_calls: 2
+- tool: email
+  operation: draft_email
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Reference prospect-specific context in the outreach draft
+- Keep the call to action aligned with qualification stage
+expected_resolution: true
+personas:
+- vague_customer

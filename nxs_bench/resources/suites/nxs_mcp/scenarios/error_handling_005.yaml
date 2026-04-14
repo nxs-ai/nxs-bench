@@ -1,0 +1,37 @@
+id: mcp-error-handling-005
+domain: mcp
+role_template: integration-operator
+category: error_handling
+difficulty: hard
+user_goal: Use the analytics connector for an MCP reliability task focused on error_handling.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: analytics
+user_hidden_info:
+  rate_limit_bucket: bucket-017
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 2
+initial_state:
+  connector_sessions:
+    analytics:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: error_handling
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+expected_resolution: true
+personas:
+- frustrated_customer
+connector_type: analytics
+operation_type: read
+auth_mode: api_key

@@ -1,0 +1,242 @@
+name: Contribution Tracker
+
+"on":
+  pull_request_target:
+    types:
+      - closed
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: read
+
+jobs:
+  refresh-contributions:
+    if: github.event_name != 'pull_request_target' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+
+      - name: Rebuild CONTRIBUTIONS.md
+        uses: actions/github-script@v7
+        env:
+          CONTRIBUTION_THRESHOLD: "10"
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const threshold = Number(process.env.CONTRIBUTION_THRESHOLD || '10');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const defaultBranch = context.payload.repository?.default_branch || 'main';
+            const issueTitle = 'Threshold reached — Advisory Board formation can proceed';
+            const internalAssociations = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
+
+            function escapeCell(value) {
+              return String(value ?? '').replace(/\|/g, '\\|').trim() || 'Independent';
+            }
+
+            function inferContributionType(pr, files) {
+              const labels = (pr.labels || []).map((label) =>
+                String(typeof label === 'string' ? label : label.name || '').toLowerCase(),
+              );
+              const fileNames = files.map((file) => String(file.filename || '').toLowerCase());
+
+              if (
+                labels.some((label) => label.includes('scenario')) ||
+                fileNames.some((file) => file.startsWith('suites/')) ||
+                fileNames.some((file) => file.includes('/scenarios/'))
+              ) {
+                return 'new scenario';
+              }
+
+              if (
+                labels.some((label) => label.includes('bug') || label.includes('fix') || label.includes('regression'))
+              ) {
+                return 'bug fix';
+              }
+
+              if (
+                fileNames.some((file) => file.startsWith('docs/')) ||
+                fileNames.some((file) => file.includes('methodology')) ||
+                fileNames.some((file) => file.endsWith('readme.md'))
+              ) {
+                return 'methodology feedback';
+              }
+
+              return 'bug fix';
+            }
+
+            function buildMarkdown(contributions) {
+              const counted = contributions.length;
+              const remaining = Math.max(threshold - counted, 0);
+              const thresholdReached = counted >= threshold;
+              const statusLine = thresholdReached
+                ? 'Threshold reached. Advisory Board formation can proceed.'
+                : `Threshold not yet met. ${remaining} external contributions remain before Advisory Board formation can proceed.`;
+              const rows = contributions.length
+                ? contributions
+                    .map(
+                      (entry, index) =>
+                        `| ${index + 1} | ${escapeCell(entry.name)} | ${escapeCell(entry.organization)} | ${entry.type} | [#${entry.number}](${entry.url}) | ${entry.mergedAt} |`,
+                    )
+                    .join('\n')
+                : '| 0 | _No counted external contributions yet_ | - | - | - | - |';
+
+              return [
+                '# NXS-Bench External Contributions',
+                '',
+                'This file is maintained by `nxs-bench/.github/workflows/contribution-tracker.yml`.',
+                'It tracks merged pull requests from external contributors that count toward',
+                'NXS-Bench Advisory Board formation. The formation threshold is **10 external contributions**.',
+                '',
+                '## Threshold Status',
+                '',
+                `- External contributions counted: **${counted} / ${threshold}**`,
+                `- Remaining until Advisory Board formation can proceed: **${remaining}**`,
+                `- Advisory Board status: **${thresholdReached ? 'Threshold reached — Advisory Board formation can proceed' : 'Draft governance only until the threshold is met'}**`,
+                '- Trigger message at threshold: `Threshold reached — Advisory Board formation can proceed`',
+                '',
+                '## Counting Rules',
+                '',
+                '- Count merged pull requests from authors whose `author_association` is not',
+                '  `OWNER`, `MEMBER`, or `COLLABORATOR`.',
+                '- Ignore bot accounts.',
+                '- Classify each counted contribution as `new scenario`, `bug fix`, or',
+                '  `methodology feedback`.',
+                '- Use this tracker together with [`governance/CHARTER.md`](governance/CHARTER.md)',
+                '  and [`governance/MEMBERS.md`](governance/MEMBERS.md).',
+                '',
+                '## Current Evaluation',
+                '',
+                `- ${statusLine}`,
+                '',
+                '## Contribution Log',
+                '',
+                '| # | Contributor | Organization | Contribution type | PR | Date merged |',
+                '| --- | --- | --- | --- | --- | --- |',
+                rows,
+                '',
+              ].join('\n');
+            }
+
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: 'closed',
+              sort: 'updated',
+              direction: 'desc',
+              per_page: 100,
+            });
+
+            const externalPulls = pulls.filter((pr) => {
+              const login = String(pr.user?.login || '');
+              return (
+                pr.merged_at &&
+                pr.base?.ref === defaultBranch &&
+                login &&
+                !login.endsWith('[bot]') &&
+                !internalAssociations.has(String(pr.author_association || ''))
+              );
+            });
+
+            const profileCache = new Map();
+            const contributions = [];
+
+            for (const pr of externalPulls) {
+              const files = await github.paginate(github.rest.pulls.listFiles, {
+                owner,
+                repo,
+                pull_number: pr.number,
+                per_page: 100,
+              });
+
+              const login = String(pr.user?.login || '');
+              let profile = profileCache.get(login);
+              if (!profile && login) {
+                try {
+                  const response = await github.rest.users.getByUsername({ username: login });
+                  profile = response.data;
+                } catch (error) {
+                  core.warning(`Could not load profile for ${login}: ${error.message}`);
+                  profile = null;
+                }
+                profileCache.set(login, profile);
+              }
+
+              contributions.push({
+                name: profile?.name || login,
+                organization: profile?.company || 'Independent',
+                type: inferContributionType(pr, files),
+                number: pr.number,
+                url: pr.html_url,
+                mergedAt: String(pr.merged_at).slice(0, 10),
+              });
+            }
+
+            contributions.sort((left, right) => left.mergedAt.localeCompare(right.mergedAt));
+
+            const markdown = buildMarkdown(contributions);
+            fs.writeFileSync(path.join(process.cwd(), 'CONTRIBUTIONS.md'), markdown, 'utf8');
+
+            const counted = contributions.length;
+            const remaining = Math.max(threshold - counted, 0);
+            const thresholdReached = counted >= threshold;
+
+            await core.summary
+              .addHeading('Contribution Tracker')
+              .addRaw(`Counted external contributions: **${counted} / ${threshold}**\n\n`)
+              .addRaw(
+                thresholdReached
+                  ? 'Threshold reached — Advisory Board formation can proceed\n'
+                  : `${remaining} more counted external contributions are required before Advisory Board formation can proceed.\n`,
+              )
+              .write();
+
+            if (thresholdReached) {
+              core.notice('Threshold reached — Advisory Board formation can proceed');
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                owner,
+                repo,
+                state: 'all',
+                per_page: 100,
+              });
+              const existingIssue = issues.find(
+                (issue) => !issue.pull_request && issue.title === issueTitle,
+              );
+              if (!existingIssue) {
+                await github.rest.issues.create({
+                  owner,
+                  repo,
+                  title: issueTitle,
+                  body: [
+                    'The external contribution tracker has reached the 10-contribution threshold.',
+                    '',
+                    'Next steps:',
+                    '- confirm the board roster in `governance/MEMBERS.md`',
+                    '- send outreach using `governance/INVITATION_TEMPLATE.md`',
+                    '- schedule the first quarterly meeting',
+                    '- use the Advisory Board vote issue template for async decisions',
+                  ].join('\n'),
+                });
+              }
+            }
+
+      - name: Commit refreshed contribution ledger
+        run: |
+          if git diff --quiet -- CONTRIBUTIONS.md; then
+            echo "No changes to CONTRIBUTIONS.md"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CONTRIBUTIONS.md
+          git commit -m "docs(governance): refresh contribution tracker"
+          git push

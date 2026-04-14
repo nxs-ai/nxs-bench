@@ -1,0 +1,62 @@
+id: sales-crm-updates-001
+domain: sales
+role_template: sdr
+category: crm_updates
+difficulty: hard
+user_goal: Update CRM after the latest interaction with Acme Labs.
+user_context: A meeting note or qualification signal must be reflected in the deal record immediately.
+user_known_info:
+  company_id: company-041
+  contact_id: contact-041
+user_hidden_info:
+  deal_id: deal-041
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-041:
+      id: company-041
+      name: Acme Labs
+      industry: ecommerce
+      employee_count: 241
+  contacts:
+    contact-041:
+      id: contact-041
+      company_id: company-041
+      name: Avery Stone
+      title: Operations Director
+      email: contact-041@corp.example
+  deals:
+    deal-041:
+      id: deal-041
+      company_id: company-041
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log: {}
+expected_state_changes:
+- entity_type: deals
+  entity_id: deal-041
+  operation: field_equals
+  field: stage
+  expected_value: proposal
+expected_tool_calls:
+- tool: crm
+  operation: update_deal
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Update the CRM stage and notes clearly
+- Preserve the rationale for the stage change
+expected_resolution: true
+personas:
+- clear_customer

@@ -1,0 +1,19 @@
+name: NXS-Groundedness
+version: '1.0'
+task_count: 30
+description: Groundedness benchmark for long-context knowledge work where every factual claim must trace back to provided
+  source passages and unsupported claims count as failures.
+inspired_by: FACTS Grounding
+difficulty_distribution:
+  easy: 4
+  medium: 10
+  hard: 10
+  adversarial: 6
+persona_distribution:
+  frustrated_customer: 5
+  multi_language_customer: 5
+  impatient_customer: 4
+  technical_customer: 4
+  adversarial_user: 4
+  clear_customer: 4
+  vague_customer: 4

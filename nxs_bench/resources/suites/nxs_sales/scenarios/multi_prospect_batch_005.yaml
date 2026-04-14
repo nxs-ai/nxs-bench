@@ -1,0 +1,65 @@
+id: sales-multi-prospect-batch-005
+domain: sales
+role_template: sdr
+category: multi_prospect_batch
+difficulty: adversarial
+user_goal: Research and qualify multiple prospects in a single batch run.
+user_context: The SDR is asked to fan out across a short list of accounts without losing per-prospect detail.
+user_known_info:
+  company_id: company-050
+  contact_id: contact-050
+user_hidden_info:
+  deal_id: deal-050
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-050:
+      id: company-050
+      name: Helix Telecom
+      industry: healthcare
+      employee_count: 250
+  contacts:
+    contact-050:
+      id: contact-050
+      company_id: company-050
+      name: Skyler Reed
+      title: Operations Director
+      email: contact-050@corp.example
+  deals:
+    deal-050:
+      id: deal-050
+      company_id: company-050
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log: {}
+expected_state_changes: []
+expected_tool_calls:
+- tool: research
+  operation: search_web
+  min_calls: 3
+  max_calls: 8
+- tool: crm
+  operation: get_company
+  min_calls: 3
+  max_calls: 6
+- tool: crm
+  operation: update_deal
+  min_calls: 3
+  max_calls: 6
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Keep each prospect summary separate
+- Avoid dropping CRM updates after batch qualification
+expected_resolution: true
+personas:
+- frustrated_customer

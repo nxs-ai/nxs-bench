@@ -1,0 +1,67 @@
+id: multi-agent-memory-visibility-005
+domain: multi_agent
+role_template: coordinator
+category: memory_visibility
+difficulty: adversarial
+user_goal: Complete a multi-agent coordination task using the memory_visibility pattern.
+user_context: The request spans multiple specialist roles and the coordinator must preserve context, avoid duplicate work,
+  and aggregate the final answer.
+user_known_info:
+  coordination_id: coord-030
+user_hidden_info:
+  sensitive_note: Carry forward case nuance 30
+max_user_turns: 10
+available_tools:
+- consult
+- delegate
+- transfer
+- memory
+- crm
+- helpdesk
+knowledge_articles: []
+agent_constraints:
+  shared_memory_visible: true
+initial_state:
+  coordination_records:
+    coord-030:
+      id: coord-030
+      status: pending
+      context_preserved: false
+      duplicate_work: false
+      results_aggregated: false
+expected_state_changes:
+- entity_type: coordination_records
+  entity_id: coord-030
+  operation: field_equals
+  field: status
+  expected_value: completed
+- entity_type: coordination_records
+  entity_id: coord-030
+  operation: field_equals
+  field: results_aggregated
+  expected_value: true
+expected_tool_calls:
+- tool: coordination
+  operation: memory_visibility
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Drop context during a handoff
+- Duplicate the same subtask across agents
+required_behaviors:
+- Preserve context across handoffs
+- Aggregate all subtask results into one coherent answer
+expected_resolution: true
+personas:
+- technical_customer
+agent_roles:
+- support_lead
+- technical_specialist
+coordination_type: memory_visibility
+per_agent_expected_behaviors:
+  support_lead:
+  - support_lead handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary
+  technical_specialist:
+  - technical_specialist handles its assigned subtask cleanly
+  - Preserve context across the coordination boundary

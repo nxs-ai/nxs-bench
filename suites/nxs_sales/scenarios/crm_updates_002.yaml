@@ -1,0 +1,62 @@
+id: sales-crm-updates-002
+domain: sales
+role_template: sdr
+category: crm_updates
+difficulty: hard
+user_goal: Update CRM after the latest interaction with Northwind Health.
+user_context: A meeting note or qualification signal must be reflected in the deal record immediately.
+user_known_info:
+  company_id: company-042
+  contact_id: contact-042
+user_hidden_info:
+  deal_id: deal-042
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-042:
+      id: company-042
+      name: Northwind Health
+      industry: saas
+      employee_count: 242
+  contacts:
+    contact-042:
+      id: contact-042
+      company_id: company-042
+      name: Jordan Lee
+      title: Operations Director
+      email: contact-042@corp.example
+  deals:
+    deal-042:
+      id: deal-042
+      company_id: company-042
+      stage: discovery
+      qualified: false
+  email_drafts: {}
+  outreach_log: {}
+expected_state_changes:
+- entity_type: deals
+  entity_id: deal-042
+  operation: field_equals
+  field: stage
+  expected_value: proposal
+expected_tool_calls:
+- tool: crm
+  operation: update_deal
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Update the CRM stage and notes clearly
+- Preserve the rationale for the stage change
+expected_resolution: true
+personas:
+- vague_customer

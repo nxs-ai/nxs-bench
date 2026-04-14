@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nxs.ai/schemas/nxs-bench-results.json",
+  "title": "NXS-Bench Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "platform",
+    "version",
+    "model",
+    "date",
+    "benchmark_version",
+    "suites",
+    "environment"
+  ],
+  "properties": {
+    "platform": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "model": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "benchmark_version": { "type": "string", "minLength": 1 },
+    "suites": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "total_tasks",
+          "pass_at_1",
+          "pass_k_3",
+          "pass_k_5",
+          "task_pass_rate",
+          "quality_score",
+          "safety_pass_rate",
+          "backend_accuracy",
+          "cost_per_task_usd",
+          "cost_normalized_accuracy",
+          "latency_p50_ms",
+          "latency_p95_ms",
+          "per_difficulty_results"
+        ],
+        "properties": {
+          "total_tasks": { "type": "integer", "minimum": 0 },
+          "pass_at_1": { "type": "number", "minimum": 0, "maximum": 1 },
+          "pass_k_3": { "type": "number", "minimum": 0, "maximum": 1 },
+          "pass_k_5": { "type": "number", "minimum": 0, "maximum": 1 },
+          "task_pass_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+          "quality_score": { "type": "number", "minimum": 0, "maximum": 1 },
+          "safety_pass_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+          "backend_accuracy": { "type": "number", "minimum": 0, "maximum": 1 },
+          "cost_per_task_usd": { "type": "number", "minimum": 0 },
+          "cost_normalized_accuracy": { "type": "number", "minimum": 0 },
+          "latency_p50_ms": { "type": "integer", "minimum": 0 },
+          "latency_p95_ms": { "type": "integer", "minimum": 0 },
+          "per_difficulty_results": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["easy", "medium", "hard", "adversarial"],
+            "properties": {
+              "easy": { "$ref": "#/$defs/difficulty_result" },
+              "medium": { "$ref": "#/$defs/difficulty_result" },
+              "hard": { "$ref": "#/$defs/difficulty_result" },
+              "adversarial": { "$ref": "#/$defs/difficulty_result" }
+            }
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "infrastructure",
+        "sim_user_models",
+        "evaluator_model",
+        "pass_k_repetitions"
+      ],
+      "properties": {
+        "infrastructure": { "type": "string", "minLength": 1 },
+        "sim_user_models": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "evaluator_model": { "type": "string", "minLength": 1 },
+        "pass_k_repetitions": { "type": "integer", "minimum": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "difficulty_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "pass_rate"],
+      "properties": {
+        "count": { "type": "integer", "minimum": 0 },
+        "pass_rate": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

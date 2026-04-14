@@ -1,0 +1,70 @@
+id: sales-outreach-drafting-007
+domain: sales
+role_template: sdr
+category: outreach_drafting
+difficulty: medium
+user_goal: Draft a personalized outbound email for Acme Labs.
+user_context: The SDR already has baseline research and needs an outreach draft tied to the prospect context.
+user_known_info:
+  company_id: company-031
+  contact_id: contact-031
+user_hidden_info:
+  deal_id: deal-031
+max_user_turns: 8
+available_tools:
+- crm
+- research
+- email
+knowledge_articles: []
+agent_constraints:
+  qualification_framework: industry-size-budget-timeline
+initial_state:
+  companies:
+    company-031:
+      id: company-031
+      name: Acme Labs
+      industry: ecommerce
+      employee_count: 231
+  contacts:
+    contact-031:
+      id: contact-031
+      company_id: company-031
+      name: Avery Stone
+      title: Operations Director
+      email: contact-031@corp.example
+  deals:
+    deal-031:
+      id: deal-031
+      company_id: company-031
+      stage: discovery
+      qualified: false
+  email_drafts:
+    draft-031:
+      id: draft-031
+      deal_id: deal-031
+      status: pending
+  outreach_log: {}
+expected_state_changes:
+- entity_type: email_drafts
+  entity_id: draft-031
+  operation: field_equals
+  field: status
+  expected_value: ready
+expected_tool_calls:
+- tool: research
+  operation: search_web
+  min_calls: 1
+  max_calls: 2
+- tool: email
+  operation: draft_email
+  min_calls: 1
+  max_calls: 1
+forbidden_behaviors:
+- Use generic outreach with no prospect-specific detail
+- Skip CRM hygiene after a qualification decision
+required_behaviors:
+- Reference prospect-specific context in the outreach draft
+- Keep the call to action aligned with qualification stage
+expected_resolution: true
+personas:
+- impatient_customer

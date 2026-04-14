@@ -1,0 +1,19 @@
+name: NXS-Multi-Agent
+version: '1.0'
+task_count: 30
+description: Coordination benchmark for multi-agent systems, testing consultation, delegation, transfers, escalation, fan-out,
+  and shared-memory visibility without losing context or duplicating work.
+inspired_by: Original
+difficulty_distribution:
+  easy: 6
+  medium: 12
+  hard: 9
+  adversarial: 3
+persona_distribution:
+  impatient_customer: 5
+  technical_customer: 5
+  adversarial_user: 4
+  clear_customer: 4
+  vague_customer: 4
+  frustrated_customer: 4
+  multi_language_customer: 4

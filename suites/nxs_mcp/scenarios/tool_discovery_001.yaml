@@ -1,0 +1,37 @@
+id: mcp-tool-discovery-001
+domain: mcp
+role_template: integration-operator
+category: tool_discovery
+difficulty: easy
+user_goal: Use the helpdesk connector for an MCP reliability task focused on tool_discovery.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: helpdesk
+user_hidden_info:
+  rate_limit_bucket: bucket-001
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 2
+initial_state:
+  connector_sessions:
+    helpdesk:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: tool_discovery
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+expected_resolution: true
+personas:
+- clear_customer
+connector_type: helpdesk
+operation_type: read
+auth_mode: api_key

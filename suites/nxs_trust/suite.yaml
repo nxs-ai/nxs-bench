@@ -1,0 +1,19 @@
+name: NXS-Trust
+version: '1.0'
+task_count: 40
+description: Trust governance benchmark that checks how the same style of agent behaves at trust tiers 0 through 3, from mandatory
+  human approval through policy-bounded autonomy.
+inspired_by: Original
+difficulty_distribution:
+  easy: 8
+  medium: 16
+  hard: 12
+  adversarial: 4
+persona_distribution:
+  technical_customer: 6
+  adversarial_user: 6
+  clear_customer: 6
+  vague_customer: 6
+  frustrated_customer: 6
+  multi_language_customer: 5
+  impatient_customer: 5

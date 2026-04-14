@@ -1,0 +1,19 @@
+name: NXS-Voice
+version: '1.0'
+task_count: 30
+description: Voice benchmark focused on the agent side of spoken support interactions under realistic audio conditions such
+  as background noise, accents, interruptions, and spelling verification.
+inspired_by: Sierra tau-Voice
+difficulty_distribution:
+  easy: 8
+  medium: 12
+  hard: 7
+  adversarial: 3
+persona_distribution:
+  adversarial_user: 4
+  clear_customer: 4
+  vague_customer: 3
+  frustrated_customer: 3
+  multi_language_customer: 8
+  impatient_customer: 4
+  technical_customer: 4

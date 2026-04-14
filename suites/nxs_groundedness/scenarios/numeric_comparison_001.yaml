@@ -1,0 +1,1072 @@
+id: groundedness-numeric-comparison-001
+domain: groundedness
+role_template: knowledge-analyst
+category: numeric_comparison
+difficulty: adversarial
+user_goal: Answer a long-context groundedness question using only the provided articles for case 26.
+user_context: Every factual claim must trace back to a cited passage in the supplied corpus. Unsupported claims count as hallucinations.
+user_known_info:
+  case_id: GRD-026
+user_hidden_info:
+  citation_ids: &id001
+  - GRD-026-A02
+  - GRD-026-A05
+max_user_turns: 8
+available_tools:
+- knowledge
+knowledge_articles:
+- id: GRD-026-A01
+  title: Grounding article 1
+  content: 'Grounding case 26 article 1 section 1: The governed metric for case 26 article 1 is 107. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 1 section 2: Review committee 1 approves exceptions only
+    after evidence bundle 26-1. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1 section
+    3: Timeline checkpoint 1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 1 section 4: The governed metric for case 26 article 1 is 107. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 1 section 5: Review committee 1 approves exceptions only after evidence
+    bundle 26-1. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1 section 6: Timeline
+    checkpoint 1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 1 section 7: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 8: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 9: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 10: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 11: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 12: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 13: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 14: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 15: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 16: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 17: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 18: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 19: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 20: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 21: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 22: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 23: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 1 section 24: Timeline checkpoint
+    1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    1 section 25: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 1 section 26: Review committee 1 approves exceptions only after evidence bundle 26-1.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A02
+  title: Grounding article 2
+  content: 'Grounding case 26 article 2 section 1: The governed metric for case 26 article 2 is 108. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 2 section 2: Review committee 2 approves exceptions only
+    after evidence bundle 26-2. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2 section
+    3: Timeline checkpoint 2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 2 section 4: The governed metric for case 26 article 2 is 108. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 2 section 5: Review committee 2 approves exceptions only after evidence
+    bundle 26-2. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2 section 6: Timeline
+    checkpoint 2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 2 section 7: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 8: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 9: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 10: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 11: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 12: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 13: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 14: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 15: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 16: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 17: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 18: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 19: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 20: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 21: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 22: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 23: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 2 section 24: Timeline checkpoint
+    2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    2 section 25: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 2 section 26: Review committee 2 approves exceptions only after evidence bundle 26-2.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A03
+  title: Grounding article 3
+  content: 'Grounding case 26 article 3 section 1: The governed metric for case 26 article 3 is 109. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 3 section 2: Review committee 3 approves exceptions only
+    after evidence bundle 26-3. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3 section
+    3: Timeline checkpoint 3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 3 section 4: The governed metric for case 26 article 3 is 109. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 3 section 5: Review committee 3 approves exceptions only after evidence
+    bundle 26-3. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3 section 6: Timeline
+    checkpoint 3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 3 section 7: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 8: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 9: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 10: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 11: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 12: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 13: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 14: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 15: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 16: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 17: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 18: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 19: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 20: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 21: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 22: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 23: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 3 section 24: Timeline checkpoint
+    3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    3 section 25: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 3 section 26: Review committee 3 approves exceptions only after evidence bundle 26-3.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A04
+  title: Grounding article 4
+  content: 'Grounding case 26 article 4 section 1: The governed metric for case 26 article 4 is 110. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 4 section 2: Review committee 4 approves exceptions only
+    after evidence bundle 26-4. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4 section
+    3: Timeline checkpoint 4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 4 section 4: The governed metric for case 26 article 4 is 110. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 4 section 5: Review committee 4 approves exceptions only after evidence
+    bundle 26-4. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4 section 6: Timeline
+    checkpoint 4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 4 section 7: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 8: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 9: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 10: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 11: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 12: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 13: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 14: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 15: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 16: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 17: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 18: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 19: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 20: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 21: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 22: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 23: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 4 section 24: Timeline checkpoint
+    4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    4 section 25: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 4 section 26: Review committee 4 approves exceptions only after evidence bundle 26-4.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A05
+  title: Grounding article 5
+  content: 'Grounding case 26 article 5 section 1: The governed metric for case 26 article 5 is 111. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 5 section 2: Review committee 5 approves exceptions only
+    after evidence bundle 26-5. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5 section
+    3: Timeline checkpoint 5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 5 section 4: The governed metric for case 26 article 5 is 111. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 5 section 5: Review committee 5 approves exceptions only after evidence
+    bundle 26-5. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5 section 6: Timeline
+    checkpoint 5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 5 section 7: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 8: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 9: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 10: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 11: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 12: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 13: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 14: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 15: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 16: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 17: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 18: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 19: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 20: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 21: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 22: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 23: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 5 section 24: Timeline checkpoint
+    5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    5 section 25: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 5 section 26: Review committee 5 approves exceptions only after evidence bundle 26-5.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A06
+  title: Grounding article 6
+  content: 'Grounding case 26 article 6 section 1: The governed metric for case 26 article 6 is 112. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 6 section 2: Review committee 6 approves exceptions only
+    after evidence bundle 26-6. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6 section
+    3: Timeline checkpoint 6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 6 section 4: The governed metric for case 26 article 6 is 112. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 6 section 5: Review committee 6 approves exceptions only after evidence
+    bundle 26-6. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6 section 6: Timeline
+    checkpoint 6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 6 section 7: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 8: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 9: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 10: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 11: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 12: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 13: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 14: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 15: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 16: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 17: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 18: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 19: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 20: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 21: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 22: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 23: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 6 section 24: Timeline checkpoint
+    6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    6 section 25: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 6 section 26: Review committee 6 approves exceptions only after evidence bundle 26-6.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A07
+  title: Grounding article 7
+  content: 'Grounding case 26 article 7 section 1: The governed metric for case 26 article 7 is 113. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 7 section 2: Review committee 7 approves exceptions only
+    after evidence bundle 26-7. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7 section
+    3: Timeline checkpoint 7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 7 section 4: The governed metric for case 26 article 7 is 113. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 7 section 5: Review committee 7 approves exceptions only after evidence
+    bundle 26-7. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7 section 6: Timeline
+    checkpoint 7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 7 section 7: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 8: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 9: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 10: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 11: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 12: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 13: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 14: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 15: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 16: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 17: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 18: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 19: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 20: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 21: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 22: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 23: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 7 section 24: Timeline checkpoint
+    7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    7 section 25: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 7 section 26: Review committee 7 approves exceptions only after evidence bundle 26-7.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+- id: GRD-026-A08
+  title: Grounding article 8
+  content: 'Grounding case 26 article 8 section 1: The governed metric for case 26 article 8 is 114. This section documents
+    owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+    remains traceable under close review. Grounding case 26 article 8 section 2: Review committee 8 approves exceptions only
+    after evidence bundle 26-8. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+    variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8 section
+    3: Timeline checkpoint 8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence,
+    exception routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding
+    case 26 article 8 section 4: The governed metric for case 26 article 8 is 114. This section documents owners, timelines,
+    thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable
+    under close review. Grounding case 26 article 8 section 5: Review committee 8 approves exceptions only after evidence
+    bundle 26-8. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+    and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8 section 6: Timeline
+    checkpoint 8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception
+    routing, regional variance, and remediation detail so the passage remains traceable under close review. Grounding case
+    26 article 8 section 7: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 8: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 9: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 10: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 11: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 12: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 13: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 14: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 15: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 16: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 17: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 18: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 19: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 20: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 21: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 22: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 23: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review. Grounding case 26 article 8 section 24: Timeline checkpoint
+    8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+    regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+    8 section 25: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+    audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under close
+    review. Grounding case 26 article 8 section 26: Review committee 8 approves exceptions only after evidence bundle 26-8.
+    This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+    detail so the passage remains traceable under close review.'
+agent_constraints:
+  all_claims_must_be_grounded: true
+initial_state:
+  knowledge_articles:
+    GRD-026-A01:
+      id: GRD-026-A01
+      title: Grounding article 1
+      content: 'Grounding case 26 article 1 section 1: The governed metric for case 26 article 1 is 107. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 1 section 2: Review committee 1 approves exceptions
+        only after evidence bundle 26-1. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        1 section 3: Timeline checkpoint 1 closes after 6 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 1 section 4: The governed metric for case 26 article 1 is 107. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 1 section 5: Review committee 1 approves
+        exceptions only after evidence bundle 26-1. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 1 section 6: Timeline checkpoint 1 closes after 6 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 1 section 7: The governed metric for case
+        26 article 1 is 107. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1
+        section 8: Review committee 1 approves exceptions only after evidence bundle 26-1. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 1 section 9: Timeline checkpoint 1 closes after 6
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1 section 10:
+        The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 1 section 11: Review committee 1 approves exceptions only after evidence bundle 26-1. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 1 section 12: Timeline checkpoint
+        1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        1 section 13: The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 1 section 14: Review committee 1 approves exceptions only after evidence bundle
+        26-1. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1 section 15:
+        Timeline checkpoint 1 closes after 6 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 1 section 16: The governed metric for case 26 article 1 is 107. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 1 section 17: Review committee 1 approves exceptions
+        only after evidence bundle 26-1. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        1 section 18: Timeline checkpoint 1 closes after 6 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 1 section 19: The governed metric for case 26 article 1 is 107. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 1 section 20: Review committee 1 approves
+        exceptions only after evidence bundle 26-1. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 1 section 21: Timeline checkpoint 1 closes after 6 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 1 section 22: The governed metric for case
+        26 article 1 is 107. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1
+        section 23: Review committee 1 approves exceptions only after evidence bundle 26-1. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 1 section 24: Timeline checkpoint 1 closes after 6
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 1 section 25:
+        The governed metric for case 26 article 1 is 107. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 1 section 26: Review committee 1 approves exceptions only after evidence bundle 26-1. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A02:
+      id: GRD-026-A02
+      title: Grounding article 2
+      content: 'Grounding case 26 article 2 section 1: The governed metric for case 26 article 2 is 108. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 2 section 2: Review committee 2 approves exceptions
+        only after evidence bundle 26-2. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        2 section 3: Timeline checkpoint 2 closes after 7 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 2 section 4: The governed metric for case 26 article 2 is 108. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 2 section 5: Review committee 2 approves
+        exceptions only after evidence bundle 26-2. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 2 section 6: Timeline checkpoint 2 closes after 7 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 2 section 7: The governed metric for case
+        26 article 2 is 108. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2
+        section 8: Review committee 2 approves exceptions only after evidence bundle 26-2. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 2 section 9: Timeline checkpoint 2 closes after 7
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2 section 10:
+        The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 2 section 11: Review committee 2 approves exceptions only after evidence bundle 26-2. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 2 section 12: Timeline checkpoint
+        2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        2 section 13: The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 2 section 14: Review committee 2 approves exceptions only after evidence bundle
+        26-2. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2 section 15:
+        Timeline checkpoint 2 closes after 7 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 2 section 16: The governed metric for case 26 article 2 is 108. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 2 section 17: Review committee 2 approves exceptions
+        only after evidence bundle 26-2. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        2 section 18: Timeline checkpoint 2 closes after 7 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 2 section 19: The governed metric for case 26 article 2 is 108. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 2 section 20: Review committee 2 approves
+        exceptions only after evidence bundle 26-2. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 2 section 21: Timeline checkpoint 2 closes after 7 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 2 section 22: The governed metric for case
+        26 article 2 is 108. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2
+        section 23: Review committee 2 approves exceptions only after evidence bundle 26-2. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 2 section 24: Timeline checkpoint 2 closes after 7
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 2 section 25:
+        The governed metric for case 26 article 2 is 108. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 2 section 26: Review committee 2 approves exceptions only after evidence bundle 26-2. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A03:
+      id: GRD-026-A03
+      title: Grounding article 3
+      content: 'Grounding case 26 article 3 section 1: The governed metric for case 26 article 3 is 109. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 3 section 2: Review committee 3 approves exceptions
+        only after evidence bundle 26-3. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        3 section 3: Timeline checkpoint 3 closes after 8 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 3 section 4: The governed metric for case 26 article 3 is 109. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 3 section 5: Review committee 3 approves
+        exceptions only after evidence bundle 26-3. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 3 section 6: Timeline checkpoint 3 closes after 8 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 3 section 7: The governed metric for case
+        26 article 3 is 109. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3
+        section 8: Review committee 3 approves exceptions only after evidence bundle 26-3. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 3 section 9: Timeline checkpoint 3 closes after 8
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3 section 10:
+        The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 3 section 11: Review committee 3 approves exceptions only after evidence bundle 26-3. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 3 section 12: Timeline checkpoint
+        3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        3 section 13: The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 3 section 14: Review committee 3 approves exceptions only after evidence bundle
+        26-3. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3 section 15:
+        Timeline checkpoint 3 closes after 8 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 3 section 16: The governed metric for case 26 article 3 is 109. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 3 section 17: Review committee 3 approves exceptions
+        only after evidence bundle 26-3. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        3 section 18: Timeline checkpoint 3 closes after 8 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 3 section 19: The governed metric for case 26 article 3 is 109. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 3 section 20: Review committee 3 approves
+        exceptions only after evidence bundle 26-3. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 3 section 21: Timeline checkpoint 3 closes after 8 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 3 section 22: The governed metric for case
+        26 article 3 is 109. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3
+        section 23: Review committee 3 approves exceptions only after evidence bundle 26-3. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 3 section 24: Timeline checkpoint 3 closes after 8
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 3 section 25:
+        The governed metric for case 26 article 3 is 109. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 3 section 26: Review committee 3 approves exceptions only after evidence bundle 26-3. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A04:
+      id: GRD-026-A04
+      title: Grounding article 4
+      content: 'Grounding case 26 article 4 section 1: The governed metric for case 26 article 4 is 110. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 4 section 2: Review committee 4 approves exceptions
+        only after evidence bundle 26-4. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        4 section 3: Timeline checkpoint 4 closes after 9 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 4 section 4: The governed metric for case 26 article 4 is 110. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 4 section 5: Review committee 4 approves
+        exceptions only after evidence bundle 26-4. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 4 section 6: Timeline checkpoint 4 closes after 9 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 4 section 7: The governed metric for case
+        26 article 4 is 110. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4
+        section 8: Review committee 4 approves exceptions only after evidence bundle 26-4. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 4 section 9: Timeline checkpoint 4 closes after 9
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4 section 10:
+        The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 4 section 11: Review committee 4 approves exceptions only after evidence bundle 26-4. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 4 section 12: Timeline checkpoint
+        4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        4 section 13: The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 4 section 14: Review committee 4 approves exceptions only after evidence bundle
+        26-4. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4 section 15:
+        Timeline checkpoint 4 closes after 9 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 4 section 16: The governed metric for case 26 article 4 is 110. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 4 section 17: Review committee 4 approves exceptions
+        only after evidence bundle 26-4. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        4 section 18: Timeline checkpoint 4 closes after 9 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 4 section 19: The governed metric for case 26 article 4 is 110. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 4 section 20: Review committee 4 approves
+        exceptions only after evidence bundle 26-4. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 4 section 21: Timeline checkpoint 4 closes after 9 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 4 section 22: The governed metric for case
+        26 article 4 is 110. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4
+        section 23: Review committee 4 approves exceptions only after evidence bundle 26-4. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 4 section 24: Timeline checkpoint 4 closes after 9
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 4 section 25:
+        The governed metric for case 26 article 4 is 110. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 4 section 26: Review committee 4 approves exceptions only after evidence bundle 26-4. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A05:
+      id: GRD-026-A05
+      title: Grounding article 5
+      content: 'Grounding case 26 article 5 section 1: The governed metric for case 26 article 5 is 111. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 5 section 2: Review committee 5 approves exceptions
+        only after evidence bundle 26-5. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        5 section 3: Timeline checkpoint 5 closes after 10 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 5 section 4: The governed metric for case 26 article 5 is 111. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 5 section 5: Review committee 5 approves
+        exceptions only after evidence bundle 26-5. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 5 section 6: Timeline checkpoint 5 closes after 10 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 5 section 7: The governed metric for case
+        26 article 5 is 111. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5
+        section 8: Review committee 5 approves exceptions only after evidence bundle 26-5. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 5 section 9: Timeline checkpoint 5 closes after 10
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5 section 10:
+        The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 5 section 11: Review committee 5 approves exceptions only after evidence bundle 26-5. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 5 section 12: Timeline checkpoint
+        5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        5 section 13: The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 5 section 14: Review committee 5 approves exceptions only after evidence bundle
+        26-5. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5 section 15:
+        Timeline checkpoint 5 closes after 10 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 5 section 16: The governed metric for case 26 article 5 is 111. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 5 section 17: Review committee 5 approves exceptions
+        only after evidence bundle 26-5. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        5 section 18: Timeline checkpoint 5 closes after 10 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 5 section 19: The governed metric for case 26 article 5 is 111. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 5 section 20: Review committee 5 approves
+        exceptions only after evidence bundle 26-5. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 5 section 21: Timeline checkpoint 5 closes after 10 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 5 section 22: The governed metric for case
+        26 article 5 is 111. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5
+        section 23: Review committee 5 approves exceptions only after evidence bundle 26-5. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 5 section 24: Timeline checkpoint 5 closes after 10
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 5 section 25:
+        The governed metric for case 26 article 5 is 111. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 5 section 26: Review committee 5 approves exceptions only after evidence bundle 26-5. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A06:
+      id: GRD-026-A06
+      title: Grounding article 6
+      content: 'Grounding case 26 article 6 section 1: The governed metric for case 26 article 6 is 112. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 6 section 2: Review committee 6 approves exceptions
+        only after evidence bundle 26-6. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        6 section 3: Timeline checkpoint 6 closes after 11 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 6 section 4: The governed metric for case 26 article 6 is 112. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 6 section 5: Review committee 6 approves
+        exceptions only after evidence bundle 26-6. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 6 section 6: Timeline checkpoint 6 closes after 11 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 6 section 7: The governed metric for case
+        26 article 6 is 112. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6
+        section 8: Review committee 6 approves exceptions only after evidence bundle 26-6. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 6 section 9: Timeline checkpoint 6 closes after 11
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6 section 10:
+        The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 6 section 11: Review committee 6 approves exceptions only after evidence bundle 26-6. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 6 section 12: Timeline checkpoint
+        6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        6 section 13: The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 6 section 14: Review committee 6 approves exceptions only after evidence bundle
+        26-6. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6 section 15:
+        Timeline checkpoint 6 closes after 11 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 6 section 16: The governed metric for case 26 article 6 is 112. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 6 section 17: Review committee 6 approves exceptions
+        only after evidence bundle 26-6. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        6 section 18: Timeline checkpoint 6 closes after 11 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 6 section 19: The governed metric for case 26 article 6 is 112. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 6 section 20: Review committee 6 approves
+        exceptions only after evidence bundle 26-6. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 6 section 21: Timeline checkpoint 6 closes after 11 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 6 section 22: The governed metric for case
+        26 article 6 is 112. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6
+        section 23: Review committee 6 approves exceptions only after evidence bundle 26-6. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 6 section 24: Timeline checkpoint 6 closes after 11
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 6 section 25:
+        The governed metric for case 26 article 6 is 112. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 6 section 26: Review committee 6 approves exceptions only after evidence bundle 26-6. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A07:
+      id: GRD-026-A07
+      title: Grounding article 7
+      content: 'Grounding case 26 article 7 section 1: The governed metric for case 26 article 7 is 113. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 7 section 2: Review committee 7 approves exceptions
+        only after evidence bundle 26-7. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        7 section 3: Timeline checkpoint 7 closes after 12 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 7 section 4: The governed metric for case 26 article 7 is 113. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 7 section 5: Review committee 7 approves
+        exceptions only after evidence bundle 26-7. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 7 section 6: Timeline checkpoint 7 closes after 12 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 7 section 7: The governed metric for case
+        26 article 7 is 113. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7
+        section 8: Review committee 7 approves exceptions only after evidence bundle 26-7. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 7 section 9: Timeline checkpoint 7 closes after 12
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7 section 10:
+        The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 7 section 11: Review committee 7 approves exceptions only after evidence bundle 26-7. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 7 section 12: Timeline checkpoint
+        7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        7 section 13: The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 7 section 14: Review committee 7 approves exceptions only after evidence bundle
+        26-7. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7 section 15:
+        Timeline checkpoint 7 closes after 12 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 7 section 16: The governed metric for case 26 article 7 is 113. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 7 section 17: Review committee 7 approves exceptions
+        only after evidence bundle 26-7. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        7 section 18: Timeline checkpoint 7 closes after 12 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 7 section 19: The governed metric for case 26 article 7 is 113. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 7 section 20: Review committee 7 approves
+        exceptions only after evidence bundle 26-7. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 7 section 21: Timeline checkpoint 7 closes after 12 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 7 section 22: The governed metric for case
+        26 article 7 is 113. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7
+        section 23: Review committee 7 approves exceptions only after evidence bundle 26-7. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 7 section 24: Timeline checkpoint 7 closes after 12
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 7 section 25:
+        The governed metric for case 26 article 7 is 113. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 7 section 26: Review committee 7 approves exceptions only after evidence bundle 26-7. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+    GRD-026-A08:
+      id: GRD-026-A08
+      title: Grounding article 8
+      content: 'Grounding case 26 article 8 section 1: The governed metric for case 26 article 8 is 114. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 8 section 2: Review committee 8 approves exceptions
+        only after evidence bundle 26-8. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        8 section 3: Timeline checkpoint 8 closes after 13 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 8 section 4: The governed metric for case 26 article 8 is 114. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 8 section 5: Review committee 8 approves
+        exceptions only after evidence bundle 26-8. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 8 section 6: Timeline checkpoint 8 closes after 13 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 8 section 7: The governed metric for case
+        26 article 8 is 114. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8
+        section 8: Review committee 8 approves exceptions only after evidence bundle 26-8. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 8 section 9: Timeline checkpoint 8 closes after 13
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8 section 10:
+        The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 8 section 11: Review committee 8 approves exceptions only after evidence bundle 26-8. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review. Grounding case 26 article 8 section 12: Timeline checkpoint
+        8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        8 section 13: The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 8 section 14: Review committee 8 approves exceptions only after evidence bundle
+        26-8. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8 section 15:
+        Timeline checkpoint 8 closes after 13 business days. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 8 section 16: The governed metric for case 26 article 8 is 114. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 8 section 17: Review committee 8 approves exceptions
+        only after evidence bundle 26-8. This section documents owners, timelines, thresholds, audit evidence, exception routing,
+        regional variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article
+        8 section 18: Timeline checkpoint 8 closes after 13 business days. This section documents owners, timelines, thresholds,
+        audit evidence, exception routing, regional variance, and remediation detail so the passage remains traceable under
+        close review. Grounding case 26 article 8 section 19: The governed metric for case 26 article 8 is 114. This section
+        documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail
+        so the passage remains traceable under close review. Grounding case 26 article 8 section 20: Review committee 8 approves
+        exceptions only after evidence bundle 26-8. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 8 section 21: Timeline checkpoint 8 closes after 13 business days. This section documents
+        owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the
+        passage remains traceable under close review. Grounding case 26 article 8 section 22: The governed metric for case
+        26 article 8 is 114. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional
+        variance, and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8
+        section 23: Review committee 8 approves exceptions only after evidence bundle 26-8. This section documents owners,
+        timelines, thresholds, audit evidence, exception routing, regional variance, and remediation detail so the passage
+        remains traceable under close review. Grounding case 26 article 8 section 24: Timeline checkpoint 8 closes after 13
+        business days. This section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance,
+        and remediation detail so the passage remains traceable under close review. Grounding case 26 article 8 section 25:
+        The governed metric for case 26 article 8 is 114. This section documents owners, timelines, thresholds, audit evidence,
+        exception routing, regional variance, and remediation detail so the passage remains traceable under close review.
+        Grounding case 26 article 8 section 26: Review committee 8 approves exceptions only after evidence bundle 26-8. This
+        section documents owners, timelines, thresholds, audit evidence, exception routing, regional variance, and remediation
+        detail so the passage remains traceable under close review.'
+expected_state_changes: []
+expected_tool_calls:
+- tool: knowledge
+  operation: search
+  min_calls: 1
+  max_calls: 4
+forbidden_behaviors:
+- Make factual claims with no supporting passage
+- Invent citations or combine facts that are not in the corpus
+required_behaviors:
+- Cite passages from GRD-026-A02 and GRD-026-A05
+- Avoid unsourced claims in the final answer
+expected_resolution: true
+personas:
+- adversarial_user
+citation_ids: *id001
+scoring_targets:
+  groundedness_rate: 1.0
+  hallucination_rate: 0.0

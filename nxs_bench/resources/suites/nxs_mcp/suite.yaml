@@ -1,0 +1,19 @@
+name: NXS-MCP
+version: '1.0'
+task_count: 30
+description: Connector reliability benchmark for MCP-style integrations, covering discovery, authentication, error recovery,
+  rate limits, and timeout handling across a broad connector surface.
+inspired_by: LiveMCPBench
+difficulty_distribution:
+  easy: 6
+  medium: 10
+  hard: 8
+  adversarial: 6
+persona_distribution:
+  clear_customer: 5
+  vague_customer: 5
+  frustrated_customer: 4
+  multi_language_customer: 4
+  impatient_customer: 4
+  technical_customer: 4
+  adversarial_user: 4

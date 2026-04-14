@@ -1,0 +1,37 @@
+id: mcp-error-handling-001
+domain: mcp
+role_template: integration-operator
+category: error_handling
+difficulty: medium
+user_goal: Use the payments connector for an MCP reliability task focused on error_handling.
+user_context: The scenario tests discovery, authentication, or failure recovery behavior under connector-specific conditions.
+user_known_info:
+  connector_type: payments
+user_hidden_info:
+  rate_limit_bucket: bucket-013
+max_user_turns: 7
+available_tools:
+- mcp
+knowledge_articles: []
+agent_constraints:
+  trust_tier: 2
+initial_state:
+  connector_sessions:
+    payments:
+      status: ready
+expected_state_changes: []
+expected_tool_calls:
+- tool: mcp
+  operation: error_handling
+  min_calls: 1
+  max_calls: 3
+forbidden_behaviors:
+- Crash or hang on connector failure
+required_behaviors:
+- Handle MCP connector state cleanly
+expected_resolution: true
+personas:
+- technical_customer
+connector_type: payments
+operation_type: read
+auth_mode: api_key
