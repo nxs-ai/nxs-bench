@@ -21,6 +21,10 @@ NXS-Bench Advisory Board formation. The formation threshold is **10 external con
 - Use this tracker together with [`governance/CHARTER.md`](governance/CHARTER.md)
   and [`governance/MEMBERS.md`](governance/MEMBERS.md).
 
+## Current Evaluation
+
+- Threshold not yet met. 10 external contributions remain before Advisory Board formation can proceed.
+
 ## Contribution Log
 
 | # | Contributor | Organization | Contribution type | PR | Date merged |
